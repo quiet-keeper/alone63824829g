@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Портал [0]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #8a8a8a;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #2a2a2a;
+            line-height: 1.6;
+        }
+        h1 { color: #7a7; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .warning {
+            background: #1a1a1a;
+            border-left: 4px solid #a66;
+            padding: 15px;
+            margin: 20px 0;
+            color: #ccc;
+        }
+        .message {
+            background: #0f1a0f;
+            border: 1px solid #373;
+            padding: 20px;
+            margin: 30px 0;
+            color: #8c8;
+        }
+        .hidden {
+            background: #111;
+            border: 1px dashed #444;
+            padding: 15px;
+            margin-top: 25px;
+            color: #6a6;
+            font-size: 0.9em;
+        }
+        a { color: #6af; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .mono { font-family: monospace; background: #222; padding: 2px 5px; }
+    </style>
+</head>
+<body>
+    <h1>// Портал [0]</h1>
+    <p>Доступ получен. Сканер распознал сигнал.</p>
+
+    <div class="warning">
+        <strong>ПРЕДУПРЕЖДЕНИЕ О ЛОКАЦИИ</strong>
+        <p>Ты вошёл в зону неопределённого назначения. Это не игра на выживание. Это не вербовочный пункт. Это не психологический эксперимент с санкционированного полигоном.</p>
+        <p>Это — <em>личный архив</em>. Коллекция наблюдений, сомнений и паттернов, оставленная одним сознанием в надежде, что другие, со схожим устройством, смогут их распознать.</p>
+        <p>Если ты ищешь развлечения, острых ощущений или готовых ответов — <strong>вернись сейчас.</strong> Дальше будет только сложнее, а наградой будут только вопросы.</p>
+    </div>
+
+    <div class="message">
+        <p><strong>ПРАВИЛА РЕЗОНАНСА (прочти):</strong></p>
+        <ol>
+            <li>Здесь нет лидера. Есть <span class="mono">Смотритель</span> — функция, а не личность.</li>
+            <li>Здесь нет доктрины. Есть <span class="mono">гипотезы</span>, которые можно оспаривать.</li>
+            <li>Цель — не объединение. Цель — <span class="mono">сверка карт</span> внутренних территорий.</li>
+            <li>Безопасность и анонимность — обязательны. Никаких реальных имён, лиц, геолокаций.</li>
+            <li>Дальнейшее движение потребует <span class="mono">терпения, анализа и готовности к тишине.</span></li>
+        </ol>
+    </div>
+
+    <p>Если прочитанное не оттолкнуло, а наоборот — вызвало знакомое чувство (то ли любопытства, то ли узнавания), то ниже находится первый ключ.</p>
+    <p>Он указывает на следующий артефакт. Способ его использования должен быть тебе уже понятен.</p>
+
+    <div class="hidden" id="nextStep">
+        <p><strong>СЛЕДУЮЩАЯ КООРДИНАТА:</strong></p>
+        <p>Используй полученный ранее ключ <span class="mono">[ТВОЁ_КЛЮЧЕВОЕ_СЛОВО]</span> и примени его к следующему месту:</p>
+        <p><span class="mono">[ТВОЙ_СЛЕДУЮЩИЙ_URL_ИЛИ_ПОДСКАЗКА]</span></p>
+        <p>Пример подсказки: <em>"Найди звуковой файл с названием, которое является антонимом к слову 'шум', на архивном ресурсе."</em></p>
+    </div>
+
+    <script>
+        // Простейшая проверка на внимательность: спрашиваем про ключ из аудио/изображения
+        const correctKey = "НАЧАЛО"; // Замени на реальное слово-ключ из нулевого артефакта
+
+        function checkKey() {
+            const userInput = prompt("Чтобы разблокировать следующую координату, введи слово-ключ, которое ты извлёк из исходного сигнала:");
+            if (userInput && userInput.trim().toLowerCase() === correctKey.toLowerCase()) {
+                document.getElementById('nextStep').style.display = 'block';
+                alert("Доступ подтверждён. Координата разблокирована.");
+            } else {
+                alert("Ключ не распознан. Вернись к исходному артефакту и проверь его внимательнее.");
+            }
+        }
+
+        // Запускаем проверку через 3 секунды после загрузки страницы
+        setTimeout(checkKey, 3000);
+    </script>
+
+    <hr>
+    <p><small>Интерфейс Портал [0] // Статус: <span class="mono">активен</span> // Сессия: <span class="mono">одноразовая</span></small></p>
+</body>
+</html>
